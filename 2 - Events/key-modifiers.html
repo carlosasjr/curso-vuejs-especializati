@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key  Modifiers</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keyup.ctrl.13.exact="alertEvent">
+
+        <button @click.shift.84="alertEvent">Clique com o shift + t</button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+
+            },
+
+            methods: {
+                alertEvent () {
+                    alert('chamou')
+                }
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais - V-Show</title>
+</head>
+<body>
+    <div id="app">
+        <div v-if="isActive">
+            Esta div é reinderizada se for true
+        </div>
+
+        <div v-show="isActive">
+            Esta div é ocultada com display none se for false
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        new Vue({
+              el: "#app",
+              data : {
+                  isActive: true
+              }
+
+        })
+    </script>
+</body>
+</html>

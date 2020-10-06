@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping V-For</title>
+    <style>
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="i in 10">{{ i }}</li>
+        </ul>
+
+        <hr>
+
+        <ul>
+            <li v-for="product in products">
+                {{ product }}
+            </li>
+        </ul>
+
+        <hr>
+
+        <ul>
+            <li v-for="(task, index) in tasks" :class="{active : task.isActive}">
+              {{ index }} - {{ task.id }} - {{ task.name}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        new Vue({
+              el: "#app",
+              data : {
+                products: [
+                    'pera', 'uva', 'maça', 'abacaxi'
+                ],
+
+                tasks: [
+                    {id: 1, name: 'Lavar', isActive: false},
+                    {id: 2, name: 'Cozinhar', isActive: true},
+                    {id: 3, name: 'Retirar', isActive: false},
+                    {id: 4, name: 'Comer', isActive: false},
+                ]                
+              },
+
+
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Bind</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <p>{{ isActive }}</p>
+        <p>{{ isActive ? 'Ativo' : 'Desativado' }} </p>
+        <a v-bind:href="url" :title="texto" >{{ texto }}</a>
+        <br>
+        <a :href="url" :title="texto" >{{ texto }}</a>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data: {
+                title: 'Realizando data-bind: v-bind / :',
+                isActive: true,
+                url: 'https://www.especializati.com.br/campus',
+                texto: 'Site Especializa Ti'
+            }
+        })
+    </script>
+</body>
+</html>

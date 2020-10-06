@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-nr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos com Vue</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-on:keyup="count++">
+        <button @click="count++">Incrementar</button>
+        <button @click="count--">Decrementar</button>
+
+        {{ count }}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        new Vue(
+            {
+                el: "#app",
+                data: {
+                    count : 0
+                }
+            }
+        )
+    </script>
+</body>
+</html>

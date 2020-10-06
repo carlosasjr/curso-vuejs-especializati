@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Teclado</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" 
+        @keyup.enter="keyEnter"
+        @keyup.up="setaCima"
+        @blur="perdeuFocus"
+        @keyup="getKeyCode">
+        
+        <p>{{ valueText }} </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                valueText: ''
+            },
+
+            methods: {
+                keyEnter (event) {
+                    this.valueText = event.target.value
+                },
+
+                setaCima () {
+                    this.valueText = event.target.value
+                },
+
+                perdeuFocus () {
+                    this.valueText = 'Perdeu focus'
+                },
+
+                getKeyCode (event) {
+                    console.log(event.keyCode)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-nr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos com Parâmetros</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ count }}</p>
+        <input type="text" @keyup="changeInput">
+        <button @click="somar(2)">Somar 2</button>
+        <input type="text" @keyup="changeInputTwo(2, $event)">
+        
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        new Vue(
+            {
+                el: "#app",
+                data: {
+                    count: 0
+                },
+
+                methods: {
+                    changeInput () {
+                        this.count++
+                    },
+
+                    changeInputTwo (value, event) {
+                        this.count += parseInt(event.target.value) + value
+                    },
+
+                    somar(value) {
+                        this.count += value
+                    }
+                },
+
+            }
+        )
+    </script>
+    
+</body>
+</html>

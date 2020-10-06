@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observadores - Watchers</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="increment">Incrementar</button>
+
+        {{ count }}
+    </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        app = new Vue({
+            el: "#app",
+
+            data: {
+                count: 0
+            },
+
+            methods: {
+                increment () {
+                    this.count++
+                }
+            },
+
+            //oberva a propriedade count
+            watch: {
+                count () {
+                    if (app.count == 5) {
+                     alert('igual a 5')
+                     app.count = 0
+                    }
+                }
+            },
+
+           
+        })
+    </script>
+</body>
+</html>

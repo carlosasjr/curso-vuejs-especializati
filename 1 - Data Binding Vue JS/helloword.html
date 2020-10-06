@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Word com Vue</title>
+</head>
+<body>
+    <h1>Sou uma página com vue</h1>
+    
+    <div id="app">
+        <p>{{ title }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Hello Word'
+            }
+        })
+    </script>
+</body>
+</html>

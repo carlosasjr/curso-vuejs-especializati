@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros</title>
+
+    <style>
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>Filtros são usados para formatação de texto corriqueiras</p>
+        <p>Criando os próprios filter e utilizando uma biblioteca</p>
+
+        <ul>
+            <li v-for="task in tasks" :class="{active : task.completed}">
+                {{ task.id }} - {{ task.name | toUpperCase}} - {{ task.name | toLowerCase}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+    <script>
+
+        Vue.filter('toLowerCase', function(value) {
+            return value.toLowerCase();
+        })
+
+        new Vue({
+              el: "#app",
+              data : {
+                 tasks: [
+                     {id: 1, name: 'Lavar Roupa', completed: false},
+                     {id: 2, name: 'Lavar Carro', completed: true},
+                     {id: 3, name: 'Lavar Banheiro', completed: false},
+                     {id: 4, name: 'Lavar Pia', completed: true},
+                 ]
+              },
+
+              filters: {
+                toUpperCase (value) {
+                      return value.toUpperCase()
+                  }
+              }
+
+        })
+    </script>
+</body>
+</html>
