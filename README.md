@@ -58,3 +58,6 @@ Curso do Zero ao Avançado de Vue Js na Especializa T.I
  08 - Listagem das Tarefas com Vue JS
  09 - Cadastrar Nova Tarefa com Vue JS
  10 - Editar Tarefas no Vue JS 
+ 11 - Deletar Tarefa no Vue JS
+ 12 - Filtro de Tarefas no Vue JS
+ 13 - Corrigir Edição de Tarefas com Filtro
