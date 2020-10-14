@@ -18,7 +18,5 @@ export default {
 </script>
 
 <style>
-  .preload {
-    max-width: 60px;
-  }
+
 </style>

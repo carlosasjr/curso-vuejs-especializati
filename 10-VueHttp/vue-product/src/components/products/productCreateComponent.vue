@@ -38,11 +38,16 @@
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Salvar</button>
       </div>
+
+      <preloader-component :preloader="preloader"></preloader-component>
     </form>
+
+
   </div>
 </template>
 
 <script>
+import preloaderComponent from '../general/preloaderComponent'
 export default {
   data() {
     return {
@@ -52,11 +57,18 @@ export default {
         description: "",
       },
       errorValidation: "",
+      preloader: false
     };
   },
 
+  components: {      
+      preloaderComponent
+  },
+
+
   methods: {
     onSubmit() {
+      this.preloader = true  
       this.$http
         .post("http://dev.api.products/api/v1/products", this.products)
         .then(
@@ -70,9 +82,11 @@ export default {
         )
         .finally(() => {
           console.log("Finalizou");
+          this.preloader = false
         });
     },
   },
+
 };
 </script>
 

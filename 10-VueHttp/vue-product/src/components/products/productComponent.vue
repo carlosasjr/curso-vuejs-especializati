@@ -28,6 +28,8 @@
       </tbody>
     </table>
 
+    <preloader-component :preloader="preloader"></preloader-component>
+
     <pagination-component
      :pagination="products"
      :offset="offset"
@@ -68,14 +70,13 @@
       </li>
     </ul>-->
 
-    <div class="preload" v-if="preload">
-      <img src="../../../src/assets/load.gif" alt="" />
-    </div>
+
   </div>
 </template>
 
 <script>
 import paginationComponent from '../general/paginationComponent'
+import preloaderComponent from '../general/preloaderComponent'
 export default {
   data() {
     return {
@@ -89,12 +90,13 @@ export default {
         data: [],
       },
       offset: 10,
-      preload: false,
+      preloader: false,
     };
   },
 
   components: {
-      paginationComponent
+      paginationComponent,
+      preloaderComponent
   },
 
   created() {
@@ -103,7 +105,7 @@ export default {
 
   methods: {
     getProducts() {
-      this.preload = true;
+      this.preloader = true;
 
       this.$http
         .get(
@@ -119,7 +121,7 @@ export default {
           }
         )
         .finally(() => {
-          this.preload = false;
+          this.preloader = false;
         });
     },
   },
