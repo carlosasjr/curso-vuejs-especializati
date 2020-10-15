@@ -5,5 +5,6 @@ import productCreateComponent from '../components/products/productCreateComponen
 export default [ 
     {path: '/', component: homeComponent, name:'home'},
     {path: '/products', component: productComponent, name:'products'},
-    {path: '/products/create', component: productCreateComponent, name:'productsCreate'}
+    {path: '/products/create', component: productCreateComponent, name:'productsCreate'},
+    {path: '/products/:id/edit', component: productCreateComponent, name:'productsEdit', props: true},
 ]
